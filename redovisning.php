@@ -14,6 +14,18 @@ huvud rör vid en svart del av ormens kropp.
 Det finns länkar till spelets regler och en sida som visar hur man gör
 om man vill implementera spelet på sin egna hemsida.</p>
 
+<p>Lite om hur spelet fungerar: först skapas en funktion "SnakePiece" som definerar ormens
+x och y och dess rikting. SnakePiece tar som argument en canvas, en ormbit och en räknare. Räknaren plussas
+på med ett för varje gång en ormbit läggs till och därefter defineras det ifall det är en svart eller grön
+bit av ormen. Sedan har ormen en del olika funktioner: update, move, direction och addPart.
+I update så defineras hur ormen rör sig. Från börjar är riktningen ett på x-axeln och eftersom ormens x plussas
+på med ett så rör sig ormen åt höger. Detta ritas ut genom att ormens divs css(left och top) ändras och
+tilldelas x-värdet.  Detta körs konstant genom att ormens updatefunktion körs i en interval. I intervalen
+kollas det även ifall ormens huvuds x och y kordinater är desamma som fruktens x och y kordinater. Ifall de
+är det så triggas ormens addPart-funktion som helt enkelt skapar en ny SnakePiece. Denna får då samma attribut
+som den senaste ormdelen. Alla ormdelar radar upp sig och rör sig en efter en eftersom de körs genom intervalen
+en efter en. </p>
+
 <b>Krav k1: </b>
 <p>Dokumentering kring hur man implementerar spelet på en hemsida är baserad på
 att det redan finns en sida med ett index.php osv. och att användaren har en viss erfarenhet

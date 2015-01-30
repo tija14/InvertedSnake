@@ -98,9 +98,9 @@ SnakePiece.prototype = {
 			
 		},
 		addPart: function(){
-			var lastPart = this.part;
 			
-			this.part = new SnakePiece(this.canvas, lastPart, count);
+			
+			this.part = new SnakePiece(this.canvas, this.part, count);
 			count++;
 		},
 	};
@@ -208,7 +208,7 @@ $(function (){
 			
 			alert("Du dog..ditt slutresultat blev: " + points + 
 				" tryck på f5 för att spela igen");
-			window.clearInterval(hej);
+			window.clearInterval(interval);
 		}
 			
 		
